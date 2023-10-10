@@ -1,5 +1,4 @@
 import React from 'react'
-/* #4 1:00:00 */
 
 function SortPopup({ items }) {
   const [visiblePopup, setVisiblePopup] = React.useState(false) // pri klike chtobi zakrivalos
