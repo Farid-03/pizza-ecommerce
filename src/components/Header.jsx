@@ -2,7 +2,6 @@ import logo from '../assets/img/pizza-logo.svg'
 import React from 'react';
 import Button from './Button';
 import { Link } from 'react-router-dom';
-/* #5 12:39 */
 function Header () {
     return (
         <div className="header">
