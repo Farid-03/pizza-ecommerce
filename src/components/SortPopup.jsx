@@ -4,7 +4,7 @@ function SortPopup({ items }) {
   const [visiblePopup, setVisiblePopup] = React.useState(false) // pri klike chtobi zakrivalos
   const [activeItem, setactiveItem] = React.useState(0) // po umolcaniyu popularnosti ctobi ostalos
   const sortRef = React.useRef()
-  const activeLabel = items[activeItem] // esli klikat po cene to cena esli popularnosti to popularnosti
+  const activeLabel = items[activeItem].name // esli klikat po cene to cena esli popularnosti to popularnosti
 
   const toggleVisiblePopup = () => {
     setVisiblePopup(!visiblePopup)
@@ -19,7 +19,6 @@ function SortPopup({ items }) {
   const handleOutSideClick = (e) => {
     if (sortRef.current && !sortRef.current.contains(e.target)) {
       setVisiblePopup(false);
-      console.log('outside');
     }
   }
   
@@ -54,12 +53,12 @@ function SortPopup({ items }) {
              {visiblePopup && <div className="sort__popup">
                 <ul>
                 {
-        items.map((name, index) => (
+        items.map((obj, index) => (
           <li
           onClick={() => onSelectItem(index)}
            className={activeItem === index ? 'active': ''}
-             key={`${name}_${index}`}>
-           {name}
+             key={`${obj.type}_${index}`}>
+           {obj.name}
           </li>
         ))
       }

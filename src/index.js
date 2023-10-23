@@ -1,19 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Header } from './components';
 import './scss/app.scss';
 import App from './App';
+import store from './redux/store';
+import { Provider } from 'react-redux'
+
+/* store.dispatch({
+  type: 'SET_SORT_BY',
+  payload: 'price'
+}); */
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
       <React.Fragment>
+        <Provider store={store}>
         <App/>
+        </Provider>
       </React.Fragment>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 
