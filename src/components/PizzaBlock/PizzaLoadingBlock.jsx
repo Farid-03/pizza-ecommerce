@@ -1,6 +1,5 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
-/* #8 2:09:56 */
 function PizzaLoadingBlock() {
   return (
     <ContentLoader
